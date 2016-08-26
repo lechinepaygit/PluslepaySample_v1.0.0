@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Call
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		LePayController.initLePayController(this, Const.TEST_MCHID, Const.TEST_CMPAPPID, true,1);
+		LePayController.initLePayController(this, Const.TEST_MCHID, Const.TEST_CMPAPPID, true);
 		HttpsUtils.init(this);
 		initView();
 	}

@@ -17,11 +17,11 @@
 
 * 导入+LePay SDK
 
-> 在您的项目工程的build.gradle的dependencies方法中加入`compile 'com.pluslepay.android:pluslepaylib:1.0.2'`导入SDK
+> 在您的项目工程的build.gradle的dependencies方法中加入`compile 'com.pluslepay.android:pluslepaylib:1.0.5'`导入SDK
 
           dependencies {
 
-          compile 'com.pluslepay.android:pluslepaylib:1.0.2'
+          compile 'com.pluslepay.android:pluslepaylib:1.0.5'
 
          }
  * 清单文件Androidmanifest.xml 配置
