@@ -129,7 +129,7 @@
 
 * 导入+LePay SDK
 
-> 在您的Eclipse中导入[Pluslepaylibrary](https://github.com/missqikang2016/pluslepaylibrary.git)工程，并对该library进行依赖：`右键点击您的工程→选择Properties→Android→library选框中选择Add→点击Apply→Ok`。
+> 在您的Eclipse中导入[Pluslepaylibrary](https://github.com/missqikang2016/pluslepaylibrary.git)工程，并对该library进行依赖：`右键点击您的工程→选择Properties→Android→library选框中选择Add→选择Pluslepaylibrary工程→点击Apply→Ok`。
 
 
 * 清单文件Androidmanifest.xml 配置
