@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+//	compileSdkVersion 23
+//	buildToolsVersion "23.0.3"
+
+    signingConfigs {
+        release {
+            storeFile file('pluslepaydemo.jks')
+            storePassword '123456'
+            keyAlias 'demo'
+            keyPassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.lechinepay_sample"
+//		applicationId "com.lepay.pluslepaydemo"
+        minSdkVersion 16
+        targetSdkVersion 22
+//		targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard-rules_.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard-rules_.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.pluslepay.android:pluslepaylib:1.0.4'
+}
+

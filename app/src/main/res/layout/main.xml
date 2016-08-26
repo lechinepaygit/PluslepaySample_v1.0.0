@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/txtGoodsTitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="20dp"
+		android:text="商品名称："/>
+
+	<TextView
+		android:id="@+id/txtGoods"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/txtGoodsTitle"
+		android:layout_toRightOf="@+id/txtGoodsTitle"
+		android:text="测试商品"/>
+
+	<TextView
+		android:id="@+id/txtPriceTitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/txtGoodsTitle"
+		android:layout_below="@+id/txtGoodsTitle"
+		android:layout_marginTop="15dp"
+		android:text="单价："/>
+
+	<EditText
+		android:id="@+id/txtPrice"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/txtPriceTitle"
+		android:layout_marginRight="20dp"
+		android:layout_toRightOf="@+id/txtPriceTitle"
+		android:enabled="false"
+		android:inputType="numberDecimal"
+		android:text="0.01"/>
+	<!--<TextView
+		android:id="@+id/txtPrice"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/txtPriceTitle"
+		android:layout_toRightOf="@+id/txtPriceTitle"
+		android:text="0.01"/>-->
+
+	<RadioGroup
+		android:id="@+id/rBtnGroup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/txtPriceTitle"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
+		android:background="@drawable/bg_radio"
+		android:padding="5dp">
+
+		<RadioButton
+			android:id="@+id/rBtnApplePay"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="ApplePay"
+			android:visibility="gone"/>
+
+		<RadioButton
+			android:id="@+id/rBtnWxPay"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="微信支付"/>
+
+		<RadioButton
+			android:id="@+id/rBtnZfbPay"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="支付宝支付"/>
+
+		<RadioButton
+			android:id="@+id/rBtnYhkPayCard"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="银行卡支付（有卡列表）"/>
+
+		<RadioButton
+			android:id="@+id/rBtnYhkPayCardNo"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="银行卡支付（无卡列表）"/>
+	</RadioGroup>
+
+	<Button
+		android:id="@+id/btnPay"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/rBtnGroup"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
+		android:text="支付"/>
+
+</RelativeLayout>
