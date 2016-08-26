@@ -1,5 +1,9 @@
 package com.lepay.pluslepaydemo.utils;
 
+import android.content.Context;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
+
 import com.lepay.pluslepaydemo.PayChannel;
 import com.lepay.pluslepaydemo.R;
 
@@ -75,5 +79,36 @@ public class Utils {
 			} break;
 		}
 		return type;
+	}
+
+
+	/**
+	 * 获取当前设备的IMIE
+	 * <p>需与上面的isPhone一起使用</p>
+	 * <p>需添加权限 android.permission.READ_PHONE_STATE</p>
+	 *
+	 * @param context 上下文
+	 * @return IMIE码
+	 */
+	public static String getDeviceIMEI(Context context) {
+		String deviceId;
+		if (isPhone(context)) {
+			TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+			deviceId = tm.getDeviceId();
+		} else {
+			deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+		}
+		return deviceId;
+	}
+
+	/**
+	 * 判断设备是否是手机
+	 *
+	 * @param context 上下文
+	 * @return true: 是<br>false: 否
+	 */
+	public static boolean isPhone(Context context) {
+		TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+		return tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE;
 	}
 }

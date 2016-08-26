@@ -56,8 +56,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Call
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
 		LePayController.initLePayController(this, Const.TEST_MCHID, Const.TEST_CMPAPPID, true);
+
 		HttpsUtils.init(this);
 		initView();
 	}
@@ -130,8 +130,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Call
 	@Override
 	public void onResponse(Call call, Response response) throws IOException {
 		String string = response.body().string();
-		Log.d(TAG, "onResponse: " + call.request() + "_" + response + "_" + string);
-		String buyerId = mPayType == R.id.rBtnYhkPayCard ? Const.TEST_USERID : "";
+		Log.d(TAG, "onResponse: " + call.request());
+		Log.d(TAG, "onResponse: " + response + "_" + string);
+		String buyerId = mPayType == R.id.rBtnYhkPayCard ? Utils.getDeviceIMEI(this) : "";
 
 		LePayController.lePaySendPay(this, string, buyerId, this);
 		dialog.dismiss();
